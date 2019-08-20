@@ -1,0 +1,286 @@
+/*Class with flex properties to center contents of a parent element*/
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Rules for buttons and links*/
+button {
+	font-family: inherit;
+	outline: none;
+	cursor: pointer;
+	-webkit-transition: background-color 0.3s;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/*Styling body*/
+body {
+	--container-width: 600px;
+	font-family: 'Roboto', sans-serif;
+}
+
+/*Styling navigation bar*/
+#navbar {
+	background-color: #7d4434;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#nav-links {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav-links button {
+	color: white;
+	font-size: 20px;
+	border-style: solid;
+	border-color: #f1bb99;
+	border-width: 1px;
+	margin: 15px 12px;
+	padding: 0;
+	width: 130px;
+	height: 50px;
+	background-color: #7d4434;
+}
+
+#nav-links button:hover{
+	background-color: #994f33;
+}
+
+#nav-links a {
+	color: white;
+	line-height: 50px;
+}
+
+/*Styling content container*/
+main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/*Rules for the section banners*/
+.banner {
+	flex-direction: column;
+	background-size: 100% auto;
+	width: 100%;
+}
+
+/*Styling homepage section*/
+#title-banner {
+	background-image: url("../img/homepage-banner.jpg");
+	height: 610px;
+}
+
+#title {
+	color: white;
+	text-shadow: 2px 2px 2px black;
+	font-size: 60px;
+	margin: 10px 0px;
+}
+
+#subtitle {
+	color: white;
+	font-size: 28px;
+	margin: 0px;
+	font-weight: lighter;
+	text-shadow: 1px 1px 1px black;
+}
+
+/*Rules for content sections and sub-sections*/
+.content {
+	width: 100%;
+	padding: 40px 80px;
+	margin: auto;
+	flex-direction: column;
+	justify-content: flex-start;
+	color: dimgray;
+	border-style: solid;
+	border-color: black;
+	box-sizing: border-box;
+}
+
+.sub-section {
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+/*Rules for the column cards/blurbs*/
+.column {
+	flex-direction: column;
+	background-color: whitesmoke;
+	padding-bottom: 20px;	
+	justify-content: flex-start;
+}
+
+.img-box {
+	width: 100%;
+	overflow: hidden;
+}
+
+.column img {
+	width: 100%;
+	min-height: 100%;
+}
+
+.content-box {
+	padding: 0px 25px;
+	flex-direction: column;
+}
+
+.column h5 {
+	font-size: 20px;
+	margin: 15px 0px;
+}
+
+.column p {
+	margin-top: 0px;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.column button {
+
+	width: 150px;
+	height: 45px;
+	font-size: 18px;
+	background-color: white;
+	border-style: solid;
+	border-color: lightgray;
+	border-width: 1px;
+	border-radius: 10px;
+	padding: 0;
+}
+
+.column button a {
+	color: dimgray;
+	line-height: 45px;
+}
+
+.column button:hover {
+	background-color: #e8e8e8;
+}
+
+.column button a:hover {
+	color: #7d4434;
+}
+
+/*Styling the 3-column sub-section of about*/
+#about-s1 .column {
+	width: 31%;
+}
+#about-s1 .img-box {
+	height: 150px;
+}
+#about-s1 h5 {
+	margin-right: auto;
+}
+#about-s1 button {
+	border-style: none;
+}
+#about-s1 button a {
+	color: white;
+}
+
+#feature-1 h5 {
+	color: green;
+}
+#feature-1 button {
+	background-color: green;
+}
+#feature-1 button:hover {
+	background-color: #00a700;
+}
+
+#feature-2 h5 {
+	color: #0073e2;
+}
+#feature-2 button {
+	background-color: #0073e2;
+}
+#feature-2 button:hover {
+	background-color: #0a86ff;
+}
+
+#feature-3 button {
+	background-color: #911c1c;
+}
+#feature-3 button:hover {
+	background-color: #c22525;
+}
+
+/*Styling the 2-column sub-section of about*/
+#about-s2 .column {
+	width: 48%;
+}
+#about-s2 .img-box {
+	height: 200px;
+}
+
+#two-col-right button {
+	margin-left: auto;
+}
+
+/*Styling the services section*/
+#services-banner {
+	height: 350px;
+	background-image: url("../img/services-banner.jpg");
+	color: white;
+}
+
+#services-banner h3 {
+	font-size: 40px;
+	text-shadow: 2px 2px 2px gray;
+	margin: 0;
+}
+
+#services-banner h4 {
+	margin: 1;
+	text-shadow: 1px 1px 1px gray;
+	font-size: 20px;
+	font-weight: lighter;
+	display: block;
+	width: 65%;
+	text-align: center;
+	line-height: 30px;
+}
+
+#services-s1 .column {
+	width: 23%;
+	height: 450px;
+}
+
+#services-s1 .img-box {
+	height: 180px;
+}
+
+#services-s2 {
+	width: 100%;
+}
+
+#big-column .img-box {
+	height: 365px;
+}
+
+#big-column .content-box {
+	align-items: flex-start;
+	height: 365px;
+}
