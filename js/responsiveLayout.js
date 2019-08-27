@@ -1,27 +1,16 @@
 window.onload = function() {
-	var hamburger = document.getElementById("hamburger");
 	var navbar = document.getElementById("navbar");
-	navbar.style.display = "block";
-	hamburger.addEventListener("click", function (e) {
-		console.log(navbar.style.display)
-		if (navbar.style.display === "block") {
-			navbar.style.display = "none";
-		} else if (navbar.style.display === "none") {
-			navbar.style.display = "block";
-		}
+	var checkbox = document.getElementById("check");
+	navbar.style.display = (document.documentElement.clientWidth > 770) ? "block" : "none";
+	checkbox.addEventListener("change", function () {
+		navbar.style.height = (this.checked) ? "auto" : "0";
+		navbar.style.display = (this.checked) ? "block" : "none";
 
 	}, false)
+	window.onresize = function () {
+		navbar.style.height = (document.documentElement.clientWidth > 770) ? "auto" : (checkbox.checked) ? "auto" : "0";
+		navbar.style.display = (document.documentElement.clientWidth > 770) ? "block" : (checkbox.checked) ? "block" : "none";
+	}
 }
 
 
-
-/*
-document.getElementById("hamburger").addEventListener("click", function (e) {
-		console.log(e.target);
-		var hamburger = document.querySelector("[id=homepage-btn]")
-		console.log(hamburger)
-		//e.target.setAttribute("href", "javascript: void(0)")
-		hamburger.style.display = "block"
-		console.log(hamburger.style.display);
-}, false)
-*/
