@@ -137,6 +137,8 @@ body {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	position: relative;
+	right: 9px;
 	width: 100vw;
 }
 #nav-links button {
@@ -205,6 +207,7 @@ body {
 	color: #7d4434;
 	border: none;
 	cursor: auto;
+	visibility: hidden;
 	transition: opacity 0.5s;
 }
 #top-scroll .fa-circle {
@@ -549,6 +552,7 @@ body {
 	#nav-links {
 		flex-direction: column;
 		width: inherit;
+		right: 0;
 	}
 	#nav-links li, #nav-links button {
 		margin: 0;
