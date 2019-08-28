@@ -21,17 +21,43 @@ window.onload = function() {
 	upScroll.style.visibility = "hidden";
 
 	parallax.onscroll = function() {
+		var timer;
 		if (parallax.scrollTop >= 300) {
 			upScroll.style.visibility = "visible";
 			upScroll.style.opacity = "1";
 		}
 		else {
 			upScroll.style.opacity = "0";
-			setTimeout(function() {
+			timer = setTimeout(function() {
 				upScroll.style.visibility = "hidden";
 			}, 500)
+			window.clearTimeout(timer);
 		}
 	}
+
+	//Adding smooth scrolling to anchors
+	var anchors = document.getElementsByClassName("smooth-scroll")
+	Array.prototype.forEach.call(anchors, function(a) {
+		a.addEventListener("click", function(event) {
+			event.preventDefault();
+			document.getElementById(a.href.match(/#.*$/)[0].substring(1)).scrollIntoView({
+				behavior: "smooth"
+			});
+		})
+	})
+
+	//Formatting navigation buttons to stay highlighted after clicking
+	var buttons = document.getElementsByClassName("nav-btn");
+	var unfocused = "#7d4434"
+	var focused = "#994f33"
+	Array.prototype.forEach.call(buttons, function(currentBtn) {
+		currentBtn.addEventListener("click", function() {
+			currentBtn.style.backgroundColor = focused;
+			Array.prototype.forEach.call(buttons, function(btn) {
+				if (btn !== currentBtn) {
+					btn.style.backgroundColor = unfocused;
+				}
+			})
+		})
+	})
 }
-
-
