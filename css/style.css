@@ -28,6 +28,8 @@ h4 {
 	width: 100%;
 	color: white;
 	position: relative;
+	right: 4px;
+
 }
 .banner::after {
 	content: " ";
@@ -121,7 +123,6 @@ body {
 	height: 100vh;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	margin: -3px;
 }
 
 /*Styling navigation bar*/
@@ -130,7 +131,7 @@ body {
 	position: fixed;
 	left: 0;
 	top: 0;
-	right: 14px;
+	right: 0;
 	z-index: 1;
 }
 #nav-links {
@@ -153,7 +154,7 @@ body {
 	transition: 0.3s;
 }
 #nav-links button:hover{
-	background-color: #994f33;
+	background-color: #994f33 !important;
 }
 #nav-links a {
 	color: white;
@@ -337,6 +338,8 @@ body {
 	height: var(--contact-height);
 	position: absolute;
 	overflow: hidden;
+	width: 102%;
+	right: auto;
 }
 
 #contact-banner::after {
@@ -557,6 +560,7 @@ body {
 	#nav-links li, #nav-links button {
 		margin: 0;
 		width: inherit;
+		transition: none;
 	}
 }
 
