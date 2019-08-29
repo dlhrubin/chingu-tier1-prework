@@ -11,50 +11,45 @@
 	<script src="js/responsiveLayout.js"></script>
 </head>
 <body>
-	<!---Navigation bar--->
-	<header>
-		<label id="shrunken-menu">
-			<input id="check" type="checkbox"></input>
-			<span id="hamburger">
-				<i class="fas fa-bars"></i>
-			</span>
-		</label>
-		<nav id="navbar">
-			<ul id="nav-links" class="flex">
-				<li>
-					<button class="nav-btn">
-						<a class="smooth-scroll" href="#homepage">Homepage</a>
-					</button>
-				</li>
-				<li>
-					<button class="nav-btn">
-						<a class="smooth-scroll" href="#about-anchor">About Us</a>
-					</button>
-				</li>
-				<li>
-					<button class="nav-btn">
-						<a class="smooth-scroll" href="#services">Services</a>
-					</button>
-				</li>
-				<li>
-					<button class="nav-btn">
-						<a class="smooth-scroll" href="#contact">Contact</a>
-					</button>
-				</li>
-				<li>	
-					<button class="nav-btn">External</button>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<!---End navigation bar--->
-	<button id="top-scroll">
-		<i class="fas fa-circle"></i>
-		<i class="fas fa-chevron-circle-up"></i>
-		<a class="smooth-scroll" id="to-top-btn" href="#homepage"></a>
-	</button>
-	<!---Content--->
 	<div id="parallax">
+		<!---Navigation bar--->
+		<header>
+			<label id="shrunken-menu">
+				<input id="check" type="checkbox"></input>
+				<span id="hamburger">
+					<i class="fas fa-bars"></i>
+				</span>
+			</label>
+			<nav id="navbar">
+				<ul id="nav-links" class="flex">
+					<li>
+						<button class="nav-btn">
+							<a class="smooth-scroll" href="#homepage">Homepage</a>
+						</button>
+					</li>
+					<li>
+						<button class="nav-btn">
+							<a class="smooth-scroll" href="#about-anchor">About Us</a>
+						</button>
+					</li>
+					<li>
+						<button class="nav-btn">
+							<a class="smooth-scroll" href="#services">Services</a>
+						</button>
+					</li>
+					<li>
+						<button class="nav-btn">
+							<a class="smooth-scroll" href="#contact">Contact</a>
+						</button>
+					</li>
+					<li>	
+						<button class="nav-btn">External</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!---End navigation bar--->
+		<!---Content--->
 		<main>
 			<!---Homepage banner--->
 			<section id="homepage">
@@ -223,10 +218,19 @@
 			</section>
 			<!---End usage section--->
 		</main>
+		<!---Footer--->
 		<footer id="copyright">
 			<div class="content flex"><p>Copyright &copy 2019 Danielle Rubin</p></div>
 			<script> </script>
 		</footer>
+		<!---End footer--->
 	</div>
+	<!---Scroll to top button--->
+	<button id="top-scroll">
+		<i class="fas fa-circle"></i>
+		<i class="fas fa-chevron-circle-up"></i>
+		<a class="smooth-scroll" id="to-top-btn" href="#homepage"></a>
+	</button>
+	<!---End scroll to top button--->
 </body>
 </html>
