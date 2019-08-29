@@ -2,6 +2,8 @@ window.onload = function() {
 	//Formatting responsive navigation menu
 	var navbar = document.getElementById("navbar");
 	var checkbox = document.getElementById("check");
+	var parallax = document.getElementById("parallax");
+	var	upScroll = document.getElementById("top-scroll");
 
 	navbar.style.display = (document.documentElement.clientWidth > 770) ? "block" : "none";
 
@@ -11,36 +13,40 @@ window.onload = function() {
 	}, false)
 
 	window.onresize = function () {
+		navbar.style.top = (window.innerWidth <= 770) ? parallax.scrollTop + 50 + "px" : parallax.scrollTop + "px";
 		navbar.style.height = (document.documentElement.clientWidth > 770) ? "auto" : (checkbox.checked) ? "auto" : "0";
 		navbar.style.display = (document.documentElement.clientWidth > 770) ? "block" : (checkbox.checked) ? "block" : "none";
 	}
 
 	//Formatting scroll-to-top button
-	var parallax = document.getElementById("parallax");
-	var	upScroll = document.getElementById("top-scroll");
 	upScroll.style.visibility = "hidden";
-
 	parallax.onscroll = function() {
+		//Two-liner to fix header position to the top of the window without overlapping the scroll bar
+		navbar.style.top = (window.innerWidth <= 770) ? parallax.scrollTop + 50 + "px" : parallax.scrollTop + "px";
+		document.getElementById("shrunken-menu").style.top = (parallax.scrollTop + 10) + "px"; 
+
 		var timer;
-		if (parallax.scrollTop >= 300) {
-			upScroll.style.visibility = "visible";
-			upScroll.style.opacity = "1";
-		}
-		else {
+		if (parallax.scrollTop < 300) {
 			upScroll.style.opacity = "0";
 			timer = setTimeout(function() {
-				upScroll.style.visibility = "hidden";
+				if (parallax.scrollTop < 300) {
+					upScroll.style.visibility = "hidden";
+				}
 			}, 500)
-			window.clearTimeout(timer);
+		}
+		else {
+			upScroll.style.visibility = "visible";
+			upScroll.style.opacity = "1";
 		}
 	}
 
 	//Adding smooth scrolling to anchors
 	var anchors = document.getElementsByClassName("smooth-scroll")
 	Array.prototype.forEach.call(anchors, function(a) {
+		var el = document.getElementById(a.href.match(/#.*$/)[0].substring(1));
 		a.addEventListener("click", function(event) {
 			event.preventDefault();
-			document.getElementById(a.href.match(/#.*$/)[0].substring(1)).scrollIntoView({
+			el.scrollIntoView({
 				behavior: "smooth"
 			});
 		})
@@ -48,8 +54,8 @@ window.onload = function() {
 
 	//Formatting navigation buttons to stay highlighted after clicking
 	var buttons = document.getElementsByClassName("nav-btn");
-	var unfocused = "#7d4434"
-	var focused = "#994f33"
+	var focused = "#994f33";
+	var unfocused = "#7d4434";
 	Array.prototype.forEach.call(buttons, function(currentBtn) {
 		currentBtn.addEventListener("click", function() {
 			currentBtn.style.backgroundColor = focused;
