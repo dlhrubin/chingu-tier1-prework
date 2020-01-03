@@ -3,7 +3,7 @@
 ## Overview
 This responsive template was created as a clone of the Conquer template on templatamo for the Chingu Voyage 11 pre-work phase.
 
-Live link: https://dlhrubin.github.io/chingu-tier1-prework/
+Live link: https://dlhrubin.github.io/web-template-clone/
 
 ## Features
 * Basic template with headers and content cards
